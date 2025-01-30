@@ -8,6 +8,7 @@
 		MeshBasicMaterial,
 		PerspectiveCamera,
 		Scene,
+		SphereGeometry,
 		TextureLoader,
 		WebGLRenderer
 	} from 'three';
@@ -19,35 +20,24 @@
 
 	let canvas: HTMLCanvasElement;
 
-	let materials: MeshBasicMaterial[] = [];
-
 	onMount(() => {
 		scene = new Scene();
 
 		camera = new PerspectiveCamera(55, window.innerWidth / window.innerHeight, 45, 30000);
-        camera.setRotationFromEuler(new Euler(0.5, 0, 0));
+		camera.position.set(-900, -200, -900);
+		camera.setRotationFromEuler(new Euler(0.5, 0, 0));
 
 		renderer = new WebGLRenderer({ canvas, antialias: true });
 		renderer.setSize(window.innerWidth, window.innerHeight);
 
-		let sky_front = new TextureLoader().load('skybox/front.bmp');
-		let sky_back = new TextureLoader().load('skybox/back.bmp');
-		let sky_up = new TextureLoader().load('skybox/up.bmp');
-		let sky_down = new TextureLoader().load('skybox/down.bmp');
-		let sky_left = new TextureLoader().load('skybox/left.bmp');
-		let sky_right = new TextureLoader().load('skybox/right.bmp');
+		let controls = new OrbitControls(camera, renderer.domElement);
+		controls.addEventListener('change', () => renderer.render(scene, camera));
 
-		materials.push(new MeshBasicMaterial({ map: sky_front }));
-		materials.push(new MeshBasicMaterial({ map: sky_back }));
-		materials.push(new MeshBasicMaterial({ map: sky_up }));
-		materials.push(new MeshBasicMaterial({ map: sky_down }));
-		materials.push(new MeshBasicMaterial({ map: sky_left }));
-		materials.push(new MeshBasicMaterial({ map: sky_right }));
+		let skytex = new TextureLoader().load('sky.png');
+		let skymat = new MeshBasicMaterial({ map: skytex, side: BackSide });
 
-		materials.forEach((material) => (material.side = BackSide));
-
-		let box = new BoxGeometry(1000, 1000, 1000);
-		let skybox = new Mesh(box, materials);
+		let box = new SphereGeometry(500, 60, 40, );
+		let skybox = new Mesh(box, skymat);
 
 		scene.add(skybox);
 
