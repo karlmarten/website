@@ -3,6 +3,7 @@
   "specifiers": {
     "npm:@eslint/compat@^1.2.5": "1.2.5_eslint@9.19.0",
     "npm:@eslint/js@^9.18.0": "9.19.0",
+    "npm:@fontsource/shrikhand@^5.1.1": "5.1.1",
     "npm:@sveltejs/adapter-node@^5.2.11": "5.2.12_@sveltejs+kit@2.16.1__@sveltejs+vite-plugin-svelte@5.0.3___svelte@5.19.5____acorn@8.14.0___vite@6.0.11__svelte@5.19.5___acorn@8.14.0__vite@6.0.11_rollup@4.32.1_@sveltejs+vite-plugin-svelte@5.0.3__svelte@5.19.5___acorn@8.14.0__vite@6.0.11_svelte@5.19.5__acorn@8.14.0_vite@6.0.11",
     "npm:@sveltejs/kit@^2.16.0": "2.16.1_@sveltejs+vite-plugin-svelte@5.0.3__svelte@5.19.5___acorn@8.14.0__vite@6.0.11_svelte@5.19.5__acorn@8.14.0_vite@6.0.11",
     "npm:@sveltejs/vite-plugin-svelte@5": "5.0.3_svelte@5.19.5__acorn@8.14.0_vite@6.0.11",
@@ -165,6 +166,9 @@
         "@eslint/core",
         "levn"
       ]
+    },
+    "@fontsource/shrikhand@5.1.1": {
+      "integrity": "sha512-cne7InVqcaMvIxQnq6dCwn78BQ6t3P16bJP/kQAcY0AUeUjP/2RA1TAdlswNxLPdvRSLC0np6Oy5focRo7GbTg=="
     },
     "@humanfs/core@0.19.1": {
       "integrity": "sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA=="
@@ -1713,6 +1717,7 @@
       "dependencies": [
         "npm:@eslint/compat@^1.2.5",
         "npm:@eslint/js@^9.18.0",
+        "npm:@fontsource/shrikhand@^5.1.1",
         "npm:@sveltejs/adapter-node@^5.2.11",
         "npm:@sveltejs/kit@^2.16.0",
         "npm:@sveltejs/vite-plugin-svelte@5",
